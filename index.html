@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nexel – Websites & Webshops die Resultaat Geven</title>
+  <meta name="description" content="Professionele websites & webshops met hosting, beveiliging en onderhoud inbegrepen. Gevestigd in Brussel." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    .glass{backdrop-filter:saturate(180%) blur(16px); background:rgba(255,255,255,0.08);}
+    .container{max-width:1200px}
+  </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100">
+  <!-- Navigatie -->
+  <header class="sticky top-0 z-50 bg-neutral-950/70 glass border-b border-white/10">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500 text-neutral-900 font-black">NX</span>
+        <span class="font-bold text-lg tracking-tight">Nexel</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#diensten" class="hover:text-emerald-400">Diensten</a>
+        <a href="#portfolio" class="hover:text-emerald-400">Portfolio</a>
+        <a href="#pakketten" class="hover:text-emerald-400">Pakketten</a>
+        <a href="#proces" class="hover:text-emerald-400">Werkwijze</a>
+        <a href="#contact" class="hover:text-emerald-400">Contact</a>
+      </nav>
+      <a href="#contact" class="hidden md:inline-flex px-4 py-2 rounded-xl bg-emerald-500 text-neutral-900 font-semibold hover:translate-y-[-1px] transition">Gratis Offerte</a>
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-white/10">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobiel menu -->
+  <div id="mobileMenu" class="md:hidden hidden border-b border-white/10 bg-neutral-950/90 glass">
+    <div class="container mx-auto px-4 py-3 flex flex-col gap-3">
+      <a href="#diensten" class="hover:text-emerald-400">Diensten</a>
+      <a href="#portfolio" class="hover:text-emerald-400">Portfolio</a>
+      <a href="#pakketten" class="hover:text-emerald-400">Pakketten</a>
+      <a href="#proces" class="hover:text-emerald-400">Werkwijze</a>
+      <a href="#contact" class="hover:text-emerald-400">Contact</a>
+      <a href="#contact" class="inline-flex px-4 py-2 rounded-xl bg-emerald-500 text-neutral-900 font-semibold">Gratis Offerte</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(50%_80%_at_50%_0%,rgba(16,185,129,0.2),transparent_70%)]"></div>
+    <div class="container mx-auto px-4 pb-16 pt-24 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Websites & Webshops die <span class="text-emerald-400">jouw bedrijf laten groeien</span>.</h1>
+        <p class="mt-4 text-neutral-300 max-w-xl">Wij ontwerpen, bouwen, hosten en onderhouden moderne, snelle en veilige websites. Inclusief domein, SSL, back-ups en monitoring.</p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#contact" class="px-5 py-3 rounded-xl bg-emerald-500 text-neutral-900 font-semibold">Vraag een Offerte</a>
+          <a href="#portfolio" class="px-5 py-3 rounded-xl border border-white/15">Bekijk Portfolio</a>
+        </div>
+        <div class="mt-6 flex items-center gap-6 text-xs text-neutral-400">
+          <div>• SSL & Beveiliging</div>
+          <div>• Snelheid & Optimalisatie</div>
+          <div>• Onderhoudsplannen</div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-[4/3] rounded-2xl border border-white/10 bg-gradient-to-br from-neutral-900 to-neutral-800 p-2">
+          <div class="h-full w-full rounded-xl bg-neutral-950 grid grid-cols-3 gap-2 p-2">
+            <!-- Card 1: Homepage -->
+            <button data-modal="modal-home" class="group col-span-2 rounded-lg bg-neutral-900 border border-white/10 overflow-hidden text-left">
+              <div class="h-full w-full relative">
+                <img src="https://picsum.photos/800/480?random=21" alt="Homepage voorbeeld" class="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 p-4">
+                  <div class="text-sm text-emerald-300">Case study</div>
+                  <div class="text-lg font-semibold">Moderne Homepage</div>
+                  <div class="text-xs text-neutral-300 mt-1">Snel, SEO-vriendelijk, responsive</div>
+                </div>
+              </div>
+            </button>
+
+            <!-- Card 2: Shop -->
+            <button data-modal="modal-shop" class="group rounded-lg bg-neutral-900 border border-white/10 overflow-hidden text-left">
+              <div class="h-full w-full relative">
+                <img src="https://picsum.photos/540/480?random=22" alt="Webshop voorbeeld" class="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 p-4">
+                  <div class="text-sm text-emerald-300">Webshop</div>
+                  <div class="text-lg font-semibold">Productpagina & Checkout</div>
+                </div>
+              </div>
+            </button>
+
+            <!-- Card 3: Mobile -->
+            <button data-modal="modal-mobile" class="group rounded-lg bg-neutral-900 border border-white/10 overflow-hidden text-left">
+              <div class="h-full w-full relative">
+                <img src="https://picsum.photos/540/480?random=23" alt="Mobiele weergave" class="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 p-4">
+                  <div class="text-sm text-emerald-300">Responsive</div>
+                  <div class="text-lg font-semibold">Mobiele weergave</div>
+                </div>
+              </div>
+            </button>
+
+            <!-- Card 4: Analytics -->
+            <button data-modal="modal-analytics" class="group col-span-2 rounded-lg bg-neutral-900 border border-white/10 overflow-hidden text-left">
+              <div class="h-full w-full relative">
+                <img src="https://picsum.photos/900/480?random=24" alt="Analytics dashboard" class="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 p-4">
+                  <div class="text-sm text-emerald-300">Resultaten</div>
+                  <div class="text-lg font-semibold">Analytics & Rapportage</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div id="modal-home" class="hidden fixed inset-0 z-[60] bg-black/70 p-4 md:p-10">
+    <div class="mx-auto max-w-3xl bg-neutral-900 rounded-2xl border border-white/10 overflow-hidden">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+        <h3 class="text-lg font-semibold">Case study – Moderne Homepage</h3>
+        <button class="close-modal p-2 rounded-lg bg-neutral-800">✕</button>
+      </div>
+      <img src="https://picsum.photos/1200/700?random=31" alt="Homepage case" class="w-full h-72 object-cover"/>
+      <div class="p-6 text-neutral-300 space-y-3">
+        <p>Heldere structuur, sterke call-to-actions en optimale laadsnelheid. Geïntegreerd met SEO-basis en conversie tracking.</p>
+        <ul class="list-disc ml-5 text-sm text-neutral-400">
+          <li>Laadtijd &lt; 1s op glasvezel</li>
+          <li>Technische SEO + schema markup</li>
+          <li>Privacy-vriendelijke analytics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-shop" class="hidden fixed inset-0 z-[60] bg-black/70 p-4 md:p-10">
+    <div class="mx-auto max-w-3xl bg-neutral-900 rounded-2xl border border-white/10 overflow-hidden">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+        <h3 class="text-lg font-semibold">Webshop – Product & Checkout</h3>
+        <button class="close-modal p-2 rounded-lg bg-neutral-800">✕</button>
+      </div>
+      <img src="https://picsum.photos/1200/700?random=32" alt="Shop case" class="w-full h-72 object-cover"/>
+      <div class="p-6 text-neutral-300 space-y-3">
+        <p>WooCommerce of Next.js met Stripe/Mollie, voorraadbeheer en BTW-regels. Gebruiksvriendelijk en schaalbaar.</p>
+        <ul class="list-disc ml-5 text-sm text-neutral-400">
+          <li>Betaalmethodes: Bancontact, iDEAL, Visa, PayPal</li>
+          <li>Order e-mail en facturatie</li>
+          <li>Beveiliging en anti-fraude</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-mobile" class="hidden fixed inset-0 z-[60] bg-black/70 p-4 md:p-10">
+    <div class="mx-auto max-w-3xl bg-neutral-900 rounded-2xl border border-white/10 overflow-hidden">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+        <h3 class="text-lg font-semibold">Responsive – Mobiele weergave</h3>
+        <button class="close-modal p-2 rounded-lg bg-neutral-800">✕</button>
+      </div>
+      <img src="https://picsum.photos/1200/700?random=33" alt="Mobile case" class="w-full h-72 object-cover"/>
+      <div class="p-6 text-neutral-300 space-y-3">
+        <p>Pixel-perfect op mobiel en tablet. Toegankelijkheid (WCAG), duidelijke typografie en touch-vriendelijke UI.</p>
+        <ul class="list-disc ml-5 text-sm text-neutral-400">
+          <li>Mobile-first performance</li>
+          <li>Toegankelijke formulieren</li>
+          <li>ALT-teksten en contrast</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-analytics" class="hidden fixed inset-0 z-[60] bg-black/70 p-4 md:p-10">
+    <div class="mx-auto max-w-3xl bg-neutral-900 rounded-2xl border border-white/10 overflow-hidden">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+        <h3 class="text-lg font-semibold">Analytics & Rapportage</h3>
+        <button class="close-modal p-2 rounded-lg bg-neutral-800">✕</button>
+      </div>
+      <img src="https://picsum.photos/1200/700?random=34" alt="Analytics case" class="w-full h-72 object-cover"/>
+      <div class="p-6 text-neutral-300 space-y-3">
+        <p>Inzicht in verkeer en conversies via Google Analytics 4 of privacy-vriendelijke alternatieven. Maandelijkse rapportage mogelijk.</p>
+        <ul class="list-disc ml-5 text-sm text-neutral-400">
+          <li>Conversie-tracking (contact, offerte, checkout)</li>
+          <li>SEO rapportage</li>
+          <li>Dashboard voor de klant</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diensten -->
+  <section id="diensten" class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold">Diensten</h2>
+    <p class="text-neutral-300 mt-2">Alles wat je nodig hebt van idee tot lancering — en verder.</p>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-white/10 p-6 bg-neutral-900/50">
+        <h3 class="font-semibold text-lg">Zakelijke Websites</h3>
+        <p class="mt-2 text-neutral-300">Snelle, responsive websites met duidelijke boodschap en sterke CTA’s.</p>
+        <ul class="mt-3 text-sm list-disc ml-5 text-neutral-400">
+          <li>Meertalig (NL/EN/TR)</li>
+          <li>SEO Setup (sitemap, meta-tags)</li>
+          <li>Contact- & offerteformulieren</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 p-6 bg-neutral-900/50">
+        <h3 class="font-semibold text-lg">Webshops</h3>
+        <p class="mt-2 text-neutral-300">WooCommerce of maatwerk Next.js shops met Stripe of Mollie.</p>
+        <ul class="mt-3 text-sm list-disc ml-5 text-neutral-400">
+          <li>Veilige betalingen</li>
+          <li>Voorraadbeheer</li>
+          <li>Koppelingen met boekhouding</li>
+        </ul>
+      </div>
+    </div></section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="container mx-auto px-4 py-16">
+    <div class="flex items-end justify-between gap-6 flex-wrap">
+      <div>
+        <h2 class="text-3xl font-bold">Portfolio</h2>
+        <p class="text-neutral-300 mt-2">Een selectie van recente projecten en demo's.</p>
+      </div>
+      <a href="#contact" class="px-4 py-2 rounded-xl border border-white/10">Wil je ook zo'n website?</a>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <article class="rounded-2xl overflow-hidden border border-white/10 bg-neutral-900/40">
+        <img src="https://picsum.photos/600/360?random=41" alt="Restaurant website" class="w-full h-44 object-cover"/>
+        <div class="p-5">
+          <h3 class="font-semibold">Restaurant Firenze</h3>
+          <p class="text-neutral-300 text-sm mt-1">Meertalige menukaart, reserveringen en Instagram-galerij.</p>
+          <div class="mt-3 text-xs text-neutral-400">Next.js • Tailwind • Vercel</div>
+        </div>
+      </article>
+      <article class="rounded-2xl overflow-hidden border border-white/10 bg-neutral-900/40">
+        <img src="https://picsum.photos/600/360?random=42" alt="KMO website" class="w-full h-44 object-cover"/>
+        <div class="p-5">
+          <h3 class="font-semibold">Bouwbedrijf De Smet</h3>
+          <p class="text-neutral-300 text-sm mt-1">Heldere dienstenpagina’s, offerteformulier en cases.</p>
+          <div class="mt-3 text-xs text-neutral-400">WordPress • Elementor • Cloudflare</div>
+        </div>
+      </article>
+      <article class="rounded-2xl overflow-hidden border border-white/10 bg-neutral-900/40">
+        <img src="https://picsum.photos/600/360?random=43" alt="Webshop" class="w-full h-44 object-cover"/>
+        <div class="p-5">
+          <h3 class="font-semibold">Shop Studio Nova</h3>
+          <p class="text-neutral-300 text-sm mt-1">Webshop met Stripe/Mollie, variaties en voorraadbeheer.</p>
+          <div class="mt-3 text-xs text-neutral-400">WooCommerce • Stripe • SEO</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Pakketten / Prijzen -->
+  <section id="pakketten" class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold">Pakketten & Prijzen</h2>
+    <p class="text-neutral-300 mt-2">Transparant en schaalbaar: kies wat bij je past. Alle prijzen excl. btw.</p>
+
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <!-- Starter -->
+      <div class="rounded-2xl border border-white/10 p-6 bg-neutral-900/50 flex flex-col">
+        <h3 class="font-semibold text-lg">Starter Website</h3>
+        <p class="text-neutral-300 text-sm mt-1">Ideaal voor starters en lokale diensten.</p>
+        <div class="mt-4 text-3xl font-extrabold">€ 990</div>
+        <ul class="mt-4 text-sm text-neutral-300 space-y-2 flex-1">
+          <li>• 1–4 pagina’s</li>
+          <li>• Responsive design</li>
+          <li>• Basis SEO & analytics</li>
+          <li>• Lancering binnen 1–2 weken</li>
+        </ul>
+        <a href="#contact" class="mt-5 inline-flex px-4 py-2 rounded-xl bg-emerald-500 text-neutral-900 font-semibold text-center">Start met Starter</a>
+      </div>
+
+      <!-- Business (featured) -->
+      <div class="rounded-2xl border-2 border-emerald-500/60 p-6 bg-neutral-900 flex flex-col shadow-[0_0_0_4px_rgba(16,185,129,0.08)]">
+        <div class="inline-block text-xs text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-md w-max mb-2">Meest gekozen</div>
+        <h3 class="font-semibold text-lg">Business Website</h3>
+        <p class="text-neutral-300 text-sm mt-1">Voor groeiende bedrijven met meer content.</p>
+        <div class="mt-4 text-3xl font-extrabold">€ 1.990</div>
+        <ul class="mt-4 text-sm text-neutral-300 space-y-2 flex-1">
+          <li>• 5–10 pagina’s, blog</li>
+          <li>• Snelheidoptimalisatie</li>
+          <li>• Uitgebreide SEO-setup</li>
+          <li>• Basis meertaligheid (NL/EN)</li>
+        </ul>
+        <a href="#contact" class="mt-5 inline-flex px-4 py-2 rounded-xl bg-emerald-500 text-neutral-900 font-semibold text-center">Ga voor Business</a>
+      </div>
+
+      <!-- Webshop -->
+      <div class="rounded-2xl border border-white/10 p-6 bg-neutral-900/50 flex flex-col">
+        <h3 class="font-semibold text-lg">Webshop</h3>
+        <p class="text-neutral-300 text-sm mt-1">Volwaardige online shop met betalingen.</p>
+        <div class="mt-4 text-3xl font-extrabold">vanaf € 2.490</div>
+        <ul class="mt-4 text-sm text-neutral-300 space-y-2 flex-1">
+          <li>• WooCommerce of Next.js</li>
+          <li>• Stripe/Mollie (Bancontact, iDEAL, PayPal)</li>
+          <li>• BTW/Verzendinstellingen</li>
+        </ul>
+        <a href="#contact" class="mt-5 inline-flex px-4 py-2 rounded-xl bg-emerald-500 text-neutral-900 font-semibold text-center">Vraag webshop-offerte</a>
+      </div>
+    </div>
+
+    <!-- Care plans -->
+    <div class="mt-10">
+      <h3 class="font-semibold text-lg">Onderhoud & Hosting</h3>
+      <div class="grid md:grid-cols-3 gap-6 mt-4">
+        <div class="rounded-2xl border border-white/10 p-5 bg-neutral-900/40">
+          <div class="font-semibold">Basic Care</div>
+          <div class="text-2xl font-extrabold mt-1">€ 39/m</div>
+          <ul class="text-sm text-neutral-300 mt-2 space-y-1">
+            <li>• Updates & back-ups</li>
+            <li>• Uptime monitoring</li>
+            <li>• Beveiliging (WAF/SSL)</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-white/10 p-5 bg-neutral-900/40">
+          <div class="font-semibold">Pro Care</div>
+          <div class="text-2xl font-extrabold mt-1">€ 79/m</div>
+          <ul class="text-sm text-neutral-300 mt-2 space-y-1">
+            <li>• Alles uit Basic</li>
+            <li>• Prestatie-optimalisatie</li>
+            <li>• Maandelijkse rapportage</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-white/10 p-5 bg-neutral-900/40">
+          <div class="font-semibold">E-commerce Care</div>
+          <div class="text-2xl font-extrabold mt-1">€ 149/m</div>
+          <ul class="text-sm text-neutral-300 mt-2 space-y-1">
+            <li>• Alles uit Pro</li>
+            <li>• Staging & rollbacks</li>
+            <li>• Prioritaire support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Werkwijze -->
+  <section id="proces" class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold">Onze Werkwijze</h2>
+    <p class="text-neutral-300 mt-2">Transparant, snel en zonder gedoe.</p>
+    <ol class="mt-8 grid md:grid-cols-4 gap-6 counter-reset">
+      <li class="rounded-2xl border border-white/10 p-6 bg-neutral-900/50">
+        <div class="text-emerald-400 font-semibold">1. Intake</div>
+        <p class="text-neutral-300 mt-2 text-sm">Doelen, doelgroep, voorbeelden en gewenste functionaliteiten.</p>
+      </li>
+      <li class="rounded-2xl border border-white/10 p-6 bg-neutral-900/50">
+        <div class="text-emerald-400 font-semibold">2. Ontwerp</div>
+        <p class="text-neutral-300 mt-2 text-sm">Wireframe & designvoorstel in jouw huisstijl.</p>
+      </li>
+      <li class="rounded-2xl border border-white/10 p-6 bg-neutral-900/50">
+        <div class="text-emerald-400 font-semibold">3. Bouw</div>
+        <p class="text-neutral-300 mt-2 text-sm">Technische realisatie, content, SEO en testomgeving.</p>
+      </li>
+      <li class="rounded-2xl border border-white/10 p-6 bg-neutral-900/50">
+        <div class="text-emerald-400 font-semibold">4. Lancering</div>
+        <p class="text-neutral-300 mt-2 text-sm">Domein, hosting, SSL, monitoring en overdracht/training.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container mx-auto px-4 py-16">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="text-3xl font-bold">Contact & Offerte</h2>
+        <p class="text-neutral-300 mt-2">Vertel kort wat je nodig hebt, we reageren meestal dezelfde dag.</p>
+        <div class="mt-6 text-neutral-300 text-sm space-y-2">
+          <p><span class="text-neutral-400">E-mail:</span> hello@nexel.studio</p>
+          <p><span class="text-neutral-400">Regio:</span> Brussel & België</p>
+          <p><span class="text-neutral-400">Talen:</span> NL • EN • TR</p>
+        </div>
+      </div>
+
+      <!-- Web3Forms: simple POST + redirect (most reliable on GH Pages) -->
+      <form id="contactForm" class="rounded-2xl border border-white/10 p-6 bg-neutral-900/50 space-y-4"
+            action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="5ebfa692-08f2-4ac4-a39d-fc43941d872d" />
+        <input type="hidden" name="subject" value="Nieuw bericht via Nexel website" />
+        <input type="hidden" name="from_name" value="Nexel Website" />
+        <input type="hidden" name="redirect" value="https://nexel.be/bedankt.html" />
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <div>
+          <label class="block text-sm mb-1" for="naam">Naam</label>
+          <input required id="naam" name="name"
+                 class="w-full rounded-xl bg-neutral-900 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-500" />
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm mb-1" for="email">E-mail</label>
+            <input required type="email" id="email" name="email"
+                   class="w-full rounded-xl bg-neutral-900 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-500" />
+          </div>
+          <div>
+            <label class="block text-sm mb-1" for="telefoon">Telefoon (optioneel)</label>
+            <input id="telefoon" name="phone"
+                   class="w-full rounded-xl bg-neutral-900 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-500" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm mb-1" for="bericht">Bericht</label>
+          <textarea required id="bericht" name="message" rows="5"
+                    class="w-full rounded-xl bg-neutral-900 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+        </div>
+
+        <button class="px-5 py-3 rounded-xl bg-emerald-500 text-neutral-900 font-semibold">Versturen</button>
+        <p class="text-xs text-neutral-400">Door te versturen ga je akkoord met onze privacyverklaring.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-8">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
+      <div>© <span id="year"></span> Nexel. Alle rechten voorbehouden.</div>
+      <div class="flex items-center gap-4">
+        <a href="#diensten" class="hover:text-emerald-300">Diensten</a>
+        <a href="#pakketten" class="hover:text-emerald-300">Pakketten</a>
+        <a href="#contact" class="hover:text-emerald-300">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menuBtn').addEventListener('click',()=>{
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    // Simple modal logic
+    const openers = document.querySelectorAll('[data-modal]');
+    const body = document.body;
+    openers.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-modal');
+        const modal = document.getElementById(id);
+        if(modal){ modal.classList.remove('hidden'); body.classList.add('overflow-hidden'); }
+      });
+    });
+    document.querySelectorAll('.close-modal').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const m = e.target.closest('[id^="modal-"]');
+        if(m){ m.classList.add('hidden'); body.classList.remove('overflow-hidden'); }
+      });
+    });
+    // Close on backdrop click
+    document.querySelectorAll('[id^="modal-"]').forEach(m => {
+      m.addEventListener('click', (e) => {
+        if(e.target === m){ m.classList.add('hidden'); body.classList.remove('overflow-hidden'); }
+      });
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
