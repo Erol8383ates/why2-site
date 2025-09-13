@@ -50,7 +50,6 @@
 
             <!-- Hamburger -->
             <button id="menuBtn" aria-label="Open navigatie" aria-controls="mobileMenu" aria-expanded="false" class="md:hidden p-2 rounded-lg border border-white/10">
-                <!-- SVG icon (better than ☰) -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -58,8 +57,10 @@
         </div>
     </header>
 
-    <!-- Mobiel menu -->
-    <div id="mobileMenu" class="md:hidden hidden border-b border-white/10 bg-neutral-950/90 glass supports-[backdrop-filter]:backdrop-blur">
+    <!-- Mobiel menu (fixed; positioned under header via JS) -->
+    <div id="mobileMenu"
+         class="md:hidden hidden fixed inset-x-0 z-50 border-b border-white/10 bg-neutral-950/90 glass supports-[backdrop-filter]:backdrop-blur max-h-[80vh] overflow-y-auto"
+         style="top:0">
         <div class="container mx-auto px-4 py-3 flex flex-col gap-3">
             <a href="#diensten" class="hover:text-emerald-400">Diensten</a>
             <a href="#portfolio-top" class="hover:text-emerald-400">Portfolio</a>
@@ -72,7 +73,6 @@
 
     <!-- Hero -->
     <section class="relative overflow-hidden">
-        <!-- Make overlay ignore clicks so buttons below always work -->
         <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(50%_80%_at_50%_0%,rgba(16,185,129,0.2),transparent_70%)]"></div>
 
         <div class="container mx-auto px-4 pb-16 pt-24 grid md:grid-cols-2 gap-10 items-center">
@@ -164,14 +164,14 @@
     </section>
 
     <!-- Modals -->
+
     <div id="modal-home" class="hidden fixed inset-0 z-[60] bg-black/70 p-4 md:p-10" role="dialog" aria-modal="true" aria-labelledby="modal-home-title">
         <div class="mx-auto max-w-3xl bg-neutral-900 rounded-2xl border border-white/10 overflow-hidden">
             <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
                 <h3 id="modal-home-title" class="text-lg font-semibold">Case study – Moderne Homepage</h3>
                 <button class="close-modal p-2 rounded-lg bg-neutral-800" aria-label="Sluiten">✕</button>
             </div>
-            <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1600&auto=format&fit=crop"
-                 alt="Wireframe & website-ontwerp" class="w-full h-72 object-cover" loading="lazy" decoding="async" />
+            <img src="images/it1.jpg" alt="Wireframe &amp; website-ontwerp" class="w-full h-72 object-cover" loading="lazy" decoding="async">
             <div class="p-6 text-neutral-300 space-y-3">
                 <p>Heldere structuur, sterke call-to-actions en optimale laadsnelheid. Geïntegreerd met SEO-basis en conversie tracking.</p>
                 <ul class="list-disc ml-5 text-sm text-neutral-400">
@@ -189,8 +189,7 @@
                 <h3 id="modal-shop-title" class="text-lg font-semibold">Webshop – Product & Checkout</h3>
                 <button class="close-modal p-2 rounded-lg bg-neutral-800" aria-label="Sluiten">✕</button>
             </div>
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop"
-                 alt="Checkout flow en betalingen" class="w-full h-72 object-cover" loading="lazy" decoding="async" />
+            <img src="images/it2.jpg" alt="Checkout flow en betalingen" class="w-full h-72 object-cover" loading="lazy" decoding="async">
             <div class="p-6 text-neutral-300 space-y-3">
                 <p>WooCommerce of Next.js met Stripe/Mollie, voorraadbeheer en BTW-regels. Gebruiksvriendelijk en schaalbaar.</p>
                 <ul class="list-disc ml-5 text-sm text-neutral-400">
@@ -208,8 +207,7 @@
                 <h3 id="modal-mobile-title" class="text-lg font-semibold">Responsive – Mobiele weergave</h3>
                 <button class="close-modal p-2 rounded-lg bg-neutral-800" aria-label="Sluiten">✕</button>
             </div>
-            <img src="https://images.unsplash.com/photo-1557318041-1ce374d55ebb?q=80&w=1600&auto=format&fit=crop"
-                 alt="Mobiele interface en toegankelijkheid" class="w-full h-72 object-cover" loading="lazy" decoding="async" />
+            <img src="images/it3.jpg" alt="Mobiele interface en toegankelijkheid" class="w-full h-72 object-cover" loading="lazy" decoding="async">
             <div class="p-6 text-neutral-300 space-y-3">
                 <p>Pixel-perfect op mobiel en tablet. Toegankelijkheid (WCAG), duidelijke typografie en touch-vriendelijke UI.</p>
                 <ul class="list-disc ml-5 text-sm text-neutral-400">
@@ -224,11 +222,10 @@
     <div id="modal-analytics" class="hidden fixed inset-0 z-[60] bg-black/70 p-4 md:p-10" role="dialog" aria-modal="true" aria-labelledby="modal-analytics-title">
         <div class="mx-auto max-w-3xl bg-neutral-900 rounded-2xl border border-white/10 overflow-hidden">
             <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
-                <h3 id="modal-analytics-title" class="text-lg font-semibold">Analytics & Rapportage</h3>
+                <h3 id="modal-analytics-title" class="text-lg font-semibold">Analytics &amp; Rapportage</h3>
                 <button class="close-modal p-2 rounded-lg bg-neutral-800" aria-label="Sluiten">✕</button>
             </div>
-            <img src="https://images.unsplash.com/photo-1551288049-7b3f8b0f28d8?q=80&w=1600&auto=format&fit=crop"
-                 alt="Dashboard met analytics en conversies" class="w-full h-72 object-cover" loading="lazy" decoding="async" />
+            <img src="images/it1.jpg" alt="Dashboard met analytics en conversies" class="w-full h-72 object-cover" loading="lazy" decoding="async">
             <div class="p-6 text-neutral-300 space-y-3">
                 <p>Inzicht in verkeer en conversies via Google Analytics 4 of privacy-vriendelijke alternatieven. Maandelijkse rapportage mogelijk.</p>
                 <ul class="list-disc ml-5 text-sm text-neutral-400">
@@ -239,6 +236,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Diensten -->
     <section id="diensten" class="container mx-auto px-4 py-16">
@@ -266,7 +264,7 @@
         </div>
     </section>
 
-    <!-- Portfolio heading (anchor target with offset for sticky header) -->
+    <!-- Portfolio heading (anchor with offset for sticky header) -->
     <section id="portfolio-top" class="container mx-auto px-4 pt-12 pb-8 scroll-mt-24 md:scroll-mt-28">
         <h1 class="text-4xl md:text-5xl font-extrabold">Portfolio & Expertise</h1>
         <p class="text-neutral-300 mt-3 max-w-2xl">
@@ -280,8 +278,8 @@
             <div class="rounded-2xl border border-white/10 p-6 bg-neutral-900/40">
                 <h2 class="text-xl font-semibold">Over Nexel</h2>
                 <p class="text-neutral-300 mt-2">
-                    Ik help KMO’s en starters met heldere websites en converterende webshops. Dankzij mijn infrastructuur-achtergrond
-                    lever ik performante, veilige en goed beheerde oplossingen.
+                    Wij helpen KMO’s en starters met heldere websites en converterende webshops. Dankzij onze infrastructuur-achtergrond
+                    leveren wij performante, veilige en goed beheerde oplossingen.
                 </p>
                 <ul class="mt-4 text-sm text-neutral-300 space-y-2">
                     <li>• Focus: snelheid, SEO, conversie</li>
@@ -327,25 +325,25 @@
 
         <div class="mt-8 grid md:grid-cols-3 gap-6">
             <article class="rounded-2xl overflow-hidden border border-white/10 bg-neutral-900/40">
-                <img src="https://picsum.photos/600/360?random=41" alt="Restaurant website" class="w-full h-44 object-cover" />
+                <img src="images/it5.jpg" alt="Restaurant Pepper Lier" class="w-full h-44 object-cover" />
                 <div class="p-5">
-                    <h3 class="font-semibold">Restaurant Firenze</h3>
+                    <h3 class="font-semibold">Restaurant Pepper Lier</h3>
                     <p class="text-neutral-300 text-sm mt-1">Meertalige menukaart, reserveringen en Instagram-galerij.</p>
                     <div class="mt-3 text-xs text-neutral-400">Next.js • Tailwind • Vercel</div>
                 </div>
             </article>
             <article class="rounded-2xl overflow-hidden border border-white/10 bg-neutral-900/40">
-                <img src="https://picsum.photos/600/360?random=42" alt="KMO website" class="w-full h-44 object-cover" />
+                <img src="images/web.jpg" alt="Grondwerken AllProwork BV" class="w-full h-44 object-cover" />
                 <div class="p-5">
-                    <h3 class="font-semibold">Bouwbedrijf De Smet</h3>
+                    <h3 class="font-semibold">Grondwerken AllProwork BV</h3>
                     <p class="text-neutral-300 text-sm mt-1">Heldere dienstenpagina’s, offerteformulier en cases.</p>
                     <div class="mt-3 text-xs text-neutral-400">WordPress • Elementor • Cloudflare</div>
                 </div>
             </article>
             <article class="rounded-2xl overflow-hidden border border-white/10 bg-neutral-900/40">
-                <img src="https://picsum.photos/600/360?random=43" alt="Webshop" class="w-full h-44 object-cover" />
+                <img src="images/ip6.jpg" alt="ProHaar Studio" class="w-full h-44 object-cover" />
                 <div class="p-5">
-                    <h3 class="font-semibold">Shop Studio Nova</h3>
+                    <h3 class="font-semibold">Prohaar Studio</h3>
                     <p class="text-neutral-300 text-sm mt-1">Webshop met Stripe/Mollie, variaties en voorraadbeheer.</p>
                     <div class="mt-3 text-xs text-neutral-400">WooCommerce • Stripe • SEO</div>
                 </div>
@@ -527,10 +525,23 @@
 
     <!-- Scripts -->
     <script>
-        // Mobile menu toggle + accessibility + scroll lock
+        // Mobile menu toggle + accessibility + scroll lock + dynamic positioning
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
+        const headerEl = document.querySelector('header');
         const body = document.body;
+
+        function setMenuTop() {
+            // Place the menu right below the sticky header
+            mobileMenu.style.top = headerEl.offsetHeight + 'px';
+        }
+        // Set on load and on resize/orientation change
+        function setupMenuPositioning() {
+            setMenuTop();
+            window.addEventListener('resize', setMenuTop);
+            window.addEventListener('orientationchange', setMenuTop);
+        }
+        setupMenuPositioning();
 
         function toggleMenu(forceState) {
             const willOpen = typeof forceState === 'boolean'
@@ -540,6 +551,7 @@
             mobileMenu.classList.toggle('hidden', !willOpen);
             menuBtn.setAttribute('aria-expanded', String(willOpen));
             body.classList.toggle('overflow-hidden', willOpen);
+            if (willOpen) setMenuTop();
         }
 
         menuBtn.addEventListener('click', () => toggleMenu());
